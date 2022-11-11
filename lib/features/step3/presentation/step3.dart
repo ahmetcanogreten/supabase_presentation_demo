@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:supabase_presentation/features/authentication/bloc/authentication_bloc.dart';
-import 'package:supabase_presentation/features/step2/bloc/step2_post_bloc.dart';
-import 'package:supabase_presentation/features/step2/models/step2_post.dart';
-import 'package:supabase_presentation/features/step2/presentation/step2_post_create_widget.dart';
-import 'package:supabase_presentation/features/step2/presentation/step2_post_widget.dart';
+import 'package:supabase_presentation/features/step3/bloc/step3_post_bloc.dart';
+import 'package:supabase_presentation/features/step3/models/step3_post.dart';
+import 'package:supabase_presentation/features/step3/presentation/step3_post_create_widget.dart';
+import 'package:supabase_presentation/features/step3/presentation/step3_post_widget.dart';
 
-class Step2 extends StatelessWidget {
-  const Step2({super.key});
+class Step3 extends StatelessWidget {
+  const Step3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +19,10 @@ class Step2 extends StatelessWidget {
         }
         return ListView(
           children: [
-            BlocBuilder<Step2PostBloc, Step2PostState>(
+            BlocBuilder<Step3PostBloc, Step3PostState>(
               builder: (context, state) {
-                List<Step2Post> posts = [];
-                if (state is Step2PostsReceived) {
+                List<Step3Post> posts = [];
+                if (state is Step3PostsReceived) {
                   posts = state.posts;
                 }
                 return Padding(
@@ -32,18 +32,18 @@ class Step2 extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          context.read<Step2PostBloc>().add(Step2GetPosts());
+                          context.read<Step3PostBloc>().add(Step3GetPosts());
                         },
                         child: const Text('Refresh'),
                       ),
                       const SizedBox(height: 16),
-                      const Step2PostCreateWidget(),
+                      const Step3PostCreateWidget(),
                       const SizedBox(height: 16),
-                      state is Step2PostsLoading
+                      state is Step3PostsLoading
                           ? const Center(child: CircularProgressIndicator())
                           : Column(
                               children: posts
-                                  .map((post) => Step2PostWidget(post: post))
+                                  .map((post) => Step3PostWidget(post: post))
                                   .toList(),
                             ),
                     ],

@@ -6,6 +6,8 @@ import 'package:supabase_presentation/features/authentication/repositories/authe
 import 'package:supabase_presentation/features/splash/presentation/splash_page.dart';
 import 'package:supabase_presentation/features/step2/bloc/step2_post_bloc.dart';
 import 'package:supabase_presentation/features/step2/repositories/step2_post_repository.dart';
+import 'package:supabase_presentation/features/step3/bloc/step3_post_bloc.dart';
+import 'package:supabase_presentation/features/step3/repositories/step3_post_repository.dart';
 
 const String kSupabaseUrl = 'https://iherhiqrhhrznzjsxmdf.supabase.co';
 const String kSupabaseAnonKey =
@@ -34,6 +36,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) =>
               Step2PostBloc(step2postRepository: Step2PostRepository()),
+        ),
+        BlocProvider(
+          create: (_) =>
+              Step3PostBloc(step3postRepository: Step3PostRepository()),
         )
       ],
       child: MaterialApp(
