@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:supabase_presentation/features/step3/presentation/step3.dart';
+import 'package:supabase_presentation/features/step4/presentation/step4.dart';
 import 'package:supabase_presentation/features/steps/presentation/step1.dart';
 import 'package:supabase_presentation/features/step2/presentation/step2.dart';
-import 'package:supabase_presentation/features/steps/presentation/step4.dart';
 import 'package:supabase_presentation/features/steps/presentation/step5.dart';
 
 class HomePage extends StatefulWidget {
