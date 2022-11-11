@@ -4,6 +4,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:supabase_presentation/features/authentication/bloc/authentication_bloc.dart';
 import 'package:supabase_presentation/features/authentication/repositories/authentication_repository.dart';
 import 'package:supabase_presentation/features/splash/presentation/splash_page.dart';
+import 'package:supabase_presentation/features/step2/bloc/step2_post_bloc.dart';
+import 'package:supabase_presentation/features/step2/repositories/step2_post_repository.dart';
 
 const String kSupabaseUrl = 'https://iherhiqrhhrznzjsxmdf.supabase.co';
 const String kSupabaseAnonKey =
@@ -28,7 +30,11 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (_) => AuthenticationBloc(
-                authenticationRepository: AuthenticationRepository()))
+                authenticationRepository: AuthenticationRepository())),
+        BlocProvider(
+          create: (_) =>
+              Step2PostBloc(step2postRepository: Step2PostRepository()),
+        )
       ],
       child: MaterialApp(
         title: 'Development with Supabase in Flutter',

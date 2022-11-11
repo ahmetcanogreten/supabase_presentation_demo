@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:supabase_presentation/features/steps/presentation/step1.dart';
-import 'package:supabase_presentation/features/steps/presentation/step2.dart';
+import 'package:supabase_presentation/features/step2/presentation/step2.dart';
 import 'package:supabase_presentation/features/steps/presentation/step3.dart';
 import 'package:supabase_presentation/features/steps/presentation/step4.dart';
 import 'package:supabase_presentation/features/steps/presentation/step5.dart';
@@ -19,6 +19,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Step $_currentStep'),
+      ),
       body: Steps(currentStep: _currentStep),
       bottomNavigationBar: ConvexAppBar(
         backgroundColor: Colors.blue,
